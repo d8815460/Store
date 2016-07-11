@@ -66,7 +66,16 @@ class StoreTableViewController: PFQueryTableViewController, PFLogInViewControlle
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier:String = "ParseProduct"
-//        var cell:PFProductTableViewCell! = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        var cell:PFProductTableViewCell! = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! PFProductTableViewCell
+        
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: identifier) as! PFProductTableViewCell
+        }
+        
+        self.tableView.separatorColor = UIColor.clear()
+        
+        let product: PFObject! = self.objects![indexPath.row]
+        cell.configureProduct(product: product)
         
         
         return PFProductTableViewCell() as UITableViewCell
