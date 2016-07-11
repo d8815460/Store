@@ -146,6 +146,11 @@ class PAPLogInViewController: UIViewController, FBSDKLoginButtonDelegate {
 //                        
 //                    }
 //                })
+            } else {
+                // 登入之後 回到TabBar頁面
+                self.dismiss(animated: true, completion: { 
+                    
+                })
             }
         }
     }
@@ -169,9 +174,11 @@ class PAPLogInViewController: UIViewController, FBSDKLoginButtonDelegate {
             This is the equivalent function for
             Session.getActiveSession().closeAndClearTokenInformation();
         */
-        FBSession.activeSession().closeAndClearTokenInformation()
+//        FBSession.activeSession().closeAndClearTokenInformation()
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
         PFUser.logOut()
-        (UIApplication.shared().delegate as Appdelegate!).presentLoginViewController(animated: false)
+        (UIApplication.shared().delegate as! AppDelegate).presentLoginViewController(animated: false)
     }
 
     func handleLogInError(error: NSError?) {
@@ -188,7 +195,8 @@ class PAPLogInViewController: UIViewController, FBSDKLoginButtonDelegate {
             
             if error!.code == PFErrorCode.errorFacebookInvalidSession.rawValue {
                 print("Invalid session, logging out.")
-                FBSession.activeSession().closeAndClearTokenInformation()
+                let loginManager = FBSDKLoginManager()
+                loginManager.logOut()
                 return
             }
             

@@ -1,8 +1,10 @@
 import UIKit
 import Synchronized
 import ParseFacebookUtilsV4
+import ParseUI
+import Parse
 
-class PAPWelcomeViewController: UIViewController, PAPLogInViewControllerDelegate {
+class PAPWelcomeViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
     
     private var _presentedLoginViewController: Bool = false
     private var _facebookResponseCount: Int = 0
@@ -11,68 +13,70 @@ class PAPWelcomeViewController: UIViewController, PAPLogInViewControllerDelegate
 
     // MARK:- UIViewController
     override func loadView() {
-        let backgroundImageView: UIImageView = UIImageView(frame: UIScreen.main().bounds)
-        backgroundImageView.image = UIImage(named: "Default.png")
-        self.view = backgroundImageView
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if PFUser.current() == nil {
-            presentLoginViewController(animated: false)
+            presentLoginViewController(animated: true)
             return
         }
 
         // Present Anypic UI
-        (UIApplication.shared().delegate as! AppDelegate).presentTabBarController()
+//        (UIApplication.shared().delegate as! AppDelegate).presentTabBarController()
         
         // Refresh current user with server side data -- checks if user is still valid and so on
         _facebookResponseCount = 0
+        /*
         PFUser.current()?.fetchInBackground({ (refreshedObject, error) in
             // This fetches the most recent data from FB, and syncs up all data with the server including profile pic and friends list from FB.
             
             // A kPFErrorObjectNotFound error on currentUser refresh signals a deleted user
             if error != nil && error!.code == PFErrorCode.errorObjectNotFound.rawValue {
                 print("User does not exist.")
-                (UIApplication.shared().delegate as! AppDelegate).logOut()
+//                (UIApplication.shared().delegate as! AppDelegate!).logOut()
                 return
             }
             
-            let session: FBSDKsession = PFFacebookUtils.session()!
-            if !session.isOpen {
-                print("FB Session does not exist, logout")
-                (UIApplication.shared().delegate as! AppDelegate).logOut()
-                return
-            }
+            // TODO: 不知道怎麼處理
+//            let session: FBSDKsession = PFFacebookUtils.session()!
+//            if !session.isOpen {
+//                print("FB Session does not exist, logout")
+//                (UIApplication.shared().delegate as! AppDelegate).logOut()
+//                return
+//            }
             
             if FBSDKAccessToken.current().userID == nil {
                 print("userID on FB Session does not exist, logout")
-                (UIApplication.shared().delegate as! AppDelegate).logOut()
+//                (UIApplication.shared().delegate as! AppDelegate).logOut()
                 return
             }
             
             guard let currentParseUser: PFUser = PFUser.current() else {
                 print("Current Parse user does not exist, logout")
-                (UIApplication.shared().delegate as! AppDelegate).logOut()
+//                (UIApplication.shared().delegate as! AppDelegate).logOut()
                 return
             }
             
             let facebookId = currentParseUser.object(forKey: kPAPUserFacebookIDKey) as? String
             if facebookId == nil || facebookId?.characters.count == 0 {
                 // set the parse user's FBID
-                currentParseUser.setObject(session.accessTokenData.userID, forKey: kPAPUserFacebookIDKey)
+                currentParseUser.setObject(FBSDKAccessToken.current().userID, forKey: kPAPUserFacebookIDKey)
             }
             
             if PAPUtility.userHasValidFacebookData(user: currentParseUser) == false {
-                print("User does not have valid facebook ID. PFUser's FBID: \(currentParseUser.objectForKey(kPAPUserFacebookIDKey)), FBSessions FBID: \(session.accessTokenData.userID). logout")
-                (UIApplication.shared().delegate as! AppDelegate).logOut()
+                print("User does not have valid facebook ID. PFUser's FBID: \(currentParseUser.object(forKey: kPAPUserFacebookIDKey)), FBSessions FBID: \(FBSDKAccessToken.current().userID). logout")
+//                (UIApplication.shared().delegate as! AppDelegate).logOut()
                 return
             }
             
             // Finished checking for invalid stuff
             // Refresh FB Session (When we link up the FB access token with the parse user, information other than the access token string is dropped
             // By going through a refresh, we populate useful parameters on FBAccessTokenData such as permissions.
+            
+            // TODO: 完全不知道怎麼辦
             PFFacebookUtils.session()!.refreshPermissionsWithCompletionHandler { (session, error) in
                 if (error != nil) {
                     print("Failed refresh of FB Session, logging out: \(error)")
@@ -176,7 +180,7 @@ class PAPWelcomeViewController: UIViewController, PAPLogInViewControllerDelegate
                     self.processedFacebookResponse()
                 }
             }
-        })
+        })*/
     }
 
     override func viewDidLoad() {
@@ -198,19 +202,59 @@ class PAPWelcomeViewController: UIViewController, PAPLogInViewControllerDelegate
         }
         
         _presentedLoginViewController = true
-        let loginViewController = PAPLogInViewController()
+        
+        let signupViewController = PFSignUpViewController()
+        signupViewController.delegate = self
+        signupViewController.fields = [PFSignUpFields.default]
+        
+        let loginViewController = PFLogInViewController()
         loginViewController.delegate = self
+        loginViewController.fields = [PFLogInFields.usernameAndPassword, PFLogInFields.facebook, PFLogInFields.signUpButton, PFLogInFields.dismissButton, PFLogInFields.passwordForgotten]
+        loginViewController.signUpController = signupViewController
+        loginViewController.facebookPermissions = [ "public_profile", "user_friends", "email", "user_photos"]
+        
+        
         present(loginViewController, animated: animated, completion: nil)
     }
 
-    // MARK:- PAPLoginViewControllerDelegate
-    func logInViewControllerDidLogUserIn(logInViewController: PAPLogInViewController) {
+    // MARK:- PFLoginViewControllerDelegate
+    
+    func log(_ logInController: PFLogInViewController, didLogIn user: PFUser) {
         if _presentedLoginViewController {
             _presentedLoginViewController = false
             self.dismiss(animated: true, completion: nil)
         }
     }
+    
+    func logInViewControllerDidCancelLog(in logInController: PFLogInViewController) {
+        if _presentedLoginViewController {
+            _presentedLoginViewController = false
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    // MARK:- PFSignUpViewControllerDelegate
+    
+    func signUpViewController(_ signUpController: PFSignUpViewController, didSignUp user: PFUser) {
+        print("user signup")
+        self.dismiss(animated: true) { 
+            
+        }
+    }
+    
+    func signUpViewControllerDidCancelSignUp(_ signUpController: PFSignUpViewController) {
+        print("user canncel signup")
+    }
 
+    func signUpViewController(_ signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
+        print("signup error:\(error?.description)")
+    }
+    
+    func signUpViewController(_ signUpController: PFSignUpViewController, shouldBeginSignUp info: [String : String]) -> Bool {
+        return true
+    }
+    
+    
     // MARK:- ()
 
     func processedFacebookResponse() {

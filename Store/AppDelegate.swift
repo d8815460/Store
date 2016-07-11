@@ -24,6 +24,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private var firstLaunch: Bool = true
 
+    func sharedInstance() -> AppDelegate{
+        return UIApplication.shared().delegate as! AppDelegate
+    }
+    
+    func appDelegate() -> AppDelegate
+    {
+        return UIApplication.shared().delegate as! AppDelegate
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         

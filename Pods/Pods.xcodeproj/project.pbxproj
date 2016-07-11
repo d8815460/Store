@@ -5038,10 +5038,68 @@
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
+					0EB19C1377A747F81110D44E2D5FCF78 = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
 					1AEDD4F9878A78B4540CA72E12720DFC = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
 						LastSwiftMigration = 0800;
 					};
+					1F41F474DEF6347816A0173F2F3AE8E1 = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
 					2C8AA1BAF35413BDB954A1DF93576ED1 = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
+					4FF2B38B4EAC4F35BD9D3723A02C0FB7 = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
+					5D69761C2CD2A1E5C013537B29CAB4CF = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
+					75A34FFFBEF9D84AFD23CD78530FC9FA = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
+					80CBCC225074FD190F9BEA2940592423 = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
+					8978C7FB7007A28B676AB1EA004C3923 = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
+					8E0BB694D644F859C1E34B3966D4151A = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
+					8E4B753804A4E2935C8C9CCC2BDA5082 = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
+					9D0F2E5EA1B46A5D72FFD42B0B39DBBC = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
+					B50C56E7913307EC73740BB45D44C0EE = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
+					CE9387695D2BA7F9FC4492ACE5896A30 = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
+					E1F78B1C5F8F2CCD0E68552EAF2B9B52 = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+						DevelopmentTeamName = "CHUN I CHEN";
+					};
+					E61CE3B6DFA1FE6B3E296965C76C0E10 = {
 						DevelopmentTeam = 8LJ7V3WEL3;
 						DevelopmentTeamName = "CHUN I CHEN";
 					};
