@@ -39,6 +39,8 @@
 		236752091D31EEED001FAB9C /* PAPLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236752051D31EEED001FAB9C /* PAPLogInViewController.swift */; };
 		2367520A1D31EEED001FAB9C /* PAPLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236752051D31EEED001FAB9C /* PAPLogInViewController.swift */; };
 		2367520B1D31EEED001FAB9C /* PAPLogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236752051D31EEED001FAB9C /* PAPLogInViewController.swift */; };
+		23968CE81D3340A0002A8274 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23968CE71D3340A0002A8274 /* StoreTableViewController.swift */; };
+		23968CEA1D335314002A8274 /* PFProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23968CE91D335314002A8274 /* PFProductTableViewCell.swift */; };
 		E3147A247AD2BB13FE9DBBD1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63962A0AADD552BA31AE6D2A /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +87,8 @@
 		2367520C1D31EF54001FAB9C /* Store-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Store-Bridging-Header.h"; sourceTree = "<group>"; };
 		2367520D1D31EF54001FAB9C /* StoreTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoreTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		2367520E1D31EF54001FAB9C /* StoreUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoreUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		23968CE71D3340A0002A8274 /* StoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
+		23968CE91D335314002A8274 /* PFProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFProductTableViewCell.swift; sourceTree = "<group>"; };
 		63962A0AADD552BA31AE6D2A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		76F5D4E08DE28AC497493B72 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FEA86B07523D84C853105169 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -149,6 +153,7 @@
 		236751B61D30F68A001FAB9C /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				23968CE61D334083002A8274 /* Store */,
 				236751FA1D31DDF0001FAB9C /* Theme */,
 				236752031D31EECD001FAB9C /* Login & Signup */,
 				236751E81D3151C8001FAB9C /* Unity */,
@@ -211,6 +216,15 @@
 				236752051D31EEED001FAB9C /* PAPLogInViewController.swift */,
 			);
 			name = "Login & Signup";
+			sourceTree = "<group>";
+		};
+		23968CE61D334083002A8274 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				23968CE71D3340A0002A8274 /* StoreTableViewController.swift */,
+				23968CE91D335314002A8274 /* PFProductTableViewCell.swift */,
+			);
+			name = Store;
 			sourceTree = "<group>";
 		};
 		DC854A4A6F3228E4A993BF3A /* Pods */ = {
@@ -435,10 +449,12 @@
 				236751F01D3151D9001FAB9C /* PAPUtility.swift in Sources */,
 				236751C01D30F68A001FAB9C /* Store.xcdatamodeld in Sources */,
 				236751F31D3151D9001FAB9C /* PAPCache.swift in Sources */,
+				23968CE81D3340A0002A8274 /* StoreTableViewController.swift in Sources */,
 				236752061D31EEED001FAB9C /* PAPWelcomeViewController.swift in Sources */,
 				236751BA1D30F68A001FAB9C /* ViewController.swift in Sources */,
 				236751B81D30F68A001FAB9C /* AppDelegate.swift in Sources */,
 				236751FD1D31DDF8001FAB9C /* DefauleTheme.swift in Sources */,
+				23968CEA1D335314002A8274 /* PFProductTableViewCell.swift in Sources */,
 				236752091D31EEED001FAB9C /* PAPLogInViewController.swift in Sources */,
 				236751ED1D3151D9001FAB9C /* PAPConstants.swift in Sources */,
 			);
@@ -604,6 +620,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FEA86B07523D84C853105169 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -623,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 76F5D4E08DE28AC497493B72 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
