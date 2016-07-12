@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		232DDEE71D34B6D400F82818 /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DDEE61D34B6D400F82818 /* StoreTableViewController.swift */; };
+		232DDEE91D34B85200F82818 /* PFProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232DDEE81D34B85200F82818 /* PFProductTableViewCell.swift */; };
 		236751B81D30F68A001FAB9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236751B71D30F68A001FAB9C /* AppDelegate.swift */; };
 		236751BA1D30F68A001FAB9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236751B91D30F68A001FAB9C /* ViewController.swift */; };
 		236751BD1D30F68A001FAB9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236751BB1D30F68A001FAB9C /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		232DDEE61D34B6D400F82818 /* StoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
+		232DDEE81D34B85200F82818 /* PFProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFProductTableViewCell.swift; sourceTree = "<group>"; };
 		236751B41D30F68A001FAB9C /* Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Store.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		236751B71D30F68A001FAB9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		236751B91D30F68A001FAB9C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		232DDEE11D34B56F00F82818 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				232DDEE61D34B6D400F82818 /* StoreTableViewController.swift */,
+				232DDEE81D34B85200F82818 /* PFProductTableViewCell.swift */,
+			);
+			name = Store;
+			sourceTree = "<group>";
+		};
 		236751AB1D30F68A001FAB9C = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 		236751B61D30F68A001FAB9C /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				232DDEE11D34B56F00F82818 /* Store */,
 				236751FA1D31DDF0001FAB9C /* Theme */,
 				236752031D31EECD001FAB9C /* Login & Signup */,
 				236751E81D3151C8001FAB9C /* Unity */,
@@ -435,10 +449,12 @@
 				236751F01D3151D9001FAB9C /* PAPUtility.swift in Sources */,
 				236751C01D30F68A001FAB9C /* Store.xcdatamodeld in Sources */,
 				236751F31D3151D9001FAB9C /* PAPCache.swift in Sources */,
+				232DDEE71D34B6D400F82818 /* StoreTableViewController.swift in Sources */,
 				236752061D31EEED001FAB9C /* PAPWelcomeViewController.swift in Sources */,
 				236751BA1D30F68A001FAB9C /* ViewController.swift in Sources */,
 				236751B81D30F68A001FAB9C /* AppDelegate.swift in Sources */,
 				236751FD1D31DDF8001FAB9C /* DefauleTheme.swift in Sources */,
+				232DDEE91D34B85200F82818 /* PFProductTableViewCell.swift in Sources */,
 				236752091D31EEED001FAB9C /* PAPLogInViewController.swift in Sources */,
 				236751ED1D3151D9001FAB9C /* PAPConstants.swift in Sources */,
 			);
