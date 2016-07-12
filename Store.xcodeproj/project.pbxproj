@@ -311,7 +311,7 @@
 						DevelopmentTeam = 8LJ7V3WEL3;
 						DevelopmentTeamName = "CHUN I CHEN";
 						LastSwiftMigration = 0800;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					236751CA1D30F68A001FAB9C = {
 						CreatedOnToolsVersion = 8.0;
@@ -622,12 +622,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: CHUN I CHEN (C4B52A7U96)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = Store/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.2plus3juice.Store;
+				PRODUCT_BUNDLE_IDENTIFIER = com.2plus3juice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "791dcf9d-f1d9-4831-8f90-55093c740ec1";
+				PROVISIONING_PROFILE_SPECIFIER = 8LJ7V3WEL3/2plus3_developer;
 				SWIFT_OBJC_BRIDGING_HEADER = "Store/Store-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -641,11 +643,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: CHUN I CHEN (8LJ7V3WEL3)";
 				INFOPLIST_FILE = Store/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.2plus3juice.Store;
+				PRODUCT_BUNDLE_IDENTIFIER = com.2plus3juice;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "86460776-c77a-4b44-8549-4a541045927f";
+				PROVISIONING_PROFILE_SPECIFIER = 8LJ7V3WEL3/2plus3_adhoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "Store/Store-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
